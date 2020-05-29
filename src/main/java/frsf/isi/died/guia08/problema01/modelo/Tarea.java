@@ -81,8 +81,8 @@ public class Tarea {
 		return empleadoAsignado;
 	}
 	
-	public String asCsv() {
-		return this.id+ ";\""+ this.descripcion+"\";"+this.duracionEstimada;
+	public String asCsv(Empleado e) {
+		return this.id + ";\"" + this.descripcion + "\";" + this.duracionEstimada + ";" + e.getCuil() + ";\"" + e.getNombre();
 	}
 	
 	public void setEmpleado(Empleado e) {

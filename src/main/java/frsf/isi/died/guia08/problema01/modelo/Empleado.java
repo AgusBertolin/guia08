@@ -168,4 +168,8 @@ public class Empleado {
 	public List<Tarea> getTareas(){
 		return this.tareasAsignadas;
 	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
 }

@@ -77,6 +77,29 @@ public class AppRRHHTest {
 	}
 
 	@Test
+	public void testCargarEmpleadosContratadosCSV() {
+		AppRRHH rrhhTest = new AppRRHH();
+		rrhhTest.cargarEmpleadosContratadosCSV("EmpleadosEjemplo.csv");
+		assertTrue(rrhhTest.getEmpleados().size() > 0);
+	}
+
+	@Test
+	public void testCargarEmpleadosEfectivosCSV() {
+		AppRRHH rrhhTest = new AppRRHH();
+		rrhhTest.cargarEmpleadosEfectivosCSV("EmpleadosEjemplo.csv");
+		assertTrue(rrhhTest.getEmpleados().size() > 0);
+	}
+
+	@Test
+	public void testCargarTareasCSV() {
+		AppRRHH rrhhTest = new AppRRHH();
+		rrhhTest.agregarEmpleadoEfectivo(0, "Mario", 23.5);
+		rrhhTest.agregarEmpleadoContratado(4, "Lucia", 56.0);
+		rrhhTest.cargarTareasCSV("TareasEjemplo.csv");
+		assertTrue(rrhhTest.getEmpleados().stream().map(e -> e.getTareas()).flatMap(x -> x.stream()).count() > 0);
+	}
+
+	@Test
 	public void testFacturar() {
 		AppRRHH rrhhTest = new AppRRHH();
 		rrhhTest.agregarEmpleadoEfectivo(0, "Mario", 23.5);

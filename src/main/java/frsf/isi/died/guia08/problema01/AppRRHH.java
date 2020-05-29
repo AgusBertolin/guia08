@@ -158,7 +158,7 @@ public class AppRRHH {
 			try(Writer fileWriter = new FileWriter("tareas.csv",true)) {
 				try(BufferedWriter out = new BufferedWriter(fileWriter)){
 					for(Tarea t: tareas) {
-						out.write(t.asCsv()+ System.getProperty("line.separator"));
+						out.write(t.asCsv(t.getEmpleadoAsignado())+ System.getProperty("line.separator"));
 					}
 				} 
 				catch(IOException e) { 
